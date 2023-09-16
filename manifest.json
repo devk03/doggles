@@ -1,0 +1,15 @@
+{
+  "name": "Doggles",
+  "version": "1.0.0",
+  "description": "See images through the eyes of animals",
+  "manifest_version": 3,
+  "author": "Team Doggles",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Pick a vision"
+  }
+}
