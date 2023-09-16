@@ -1,20 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doggles</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        width: 200px;
-      }
+        body {
+            font-family: 'Arial', sans-serif;
+            width: 250px;
+            color: #3e4a36;  /* forest green */
+            background: url('path_to_a_nature_image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            color: #3e4a36;  /* forest green */
+            border-bottom: 1px solid #3e4a36;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #a3b18a;  /* moss green */
+            color: #3e4a36;  /* forest green */
+            border: 1px solid #3e4a36;
+            padding: 10px 15px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #8f9f77;  /* a darker shade of moss green */
+        }
+
+        button:focus {
+            outline: none;
+        }
     </style>
-  </head>
-  <body>
-    <h2>Welcome to doggles</h2>
-    <p>This is a popup</p>
-    <button id="scrapeImagesBtn">Scrape Images</button>
-  </body>
-  <script src="popup.js"></script>
+</head>
+
+<body>
+    <h2>Welcome to Doggles</h2>
+    <p>Experience nature's wonders.</p>
+    <button id="scrapeImagesBtn">Discover Images</button>
+    <script src="popup.js"></script>
+</body>
+
 </html>
