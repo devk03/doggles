@@ -4,10 +4,14 @@
   "description": "See images through the eyes of animals",
   "manifest_version": 3,
   "author": "Team Doggles",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "tabs"],
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }],
   "action": {
     "default_popup": "index.html",
     "default_title": "Pick a vision"
