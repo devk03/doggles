@@ -1,7 +1,3 @@
-// Copyright 2019 by András Péter
-// Edited by Alice Ma
-// Licensed under the GNU General Public License v3: http://www.gnu.org/licenses/gpl.html
-
 function imgprocess
 (
     pixels, //Image data from a canvas element's getImageData function
@@ -207,21 +203,20 @@ function imgprocess
     // Create a canvas with the desired dimensions
     const canvas = createCanvas(200, 200);
     const ctx = canvas.getContext('2d');
-    // Replace this with your pixel data (example: an array of RGB values)
-    const pixelData = [
-        [255, 0, 0], [0, 255, 0], [0, 0, 255],
-        [255, 255, 0], [255, 0, 255], [0, 255, 255]
-        // Add more pixel data here as needed
-        ];
-        // Loop through the pixel data and draw each pixel on the canvas
-        for (var i=0; i<imgHeight; i++) {
-            for (var j=0; j<imgWidth; j++) {
-                const pixel = pixelData[y * canvas.width + x];
-                ctx.fillStyle = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
-                ctx.fillRect(x, y, 1, 1);
-            }
+    // Loop through the pixel data and draw each pixel on the canvas
+    var r=0;
+    for (var i=0; i<imgHeight; i++) {
+        for (var j=0; j<imgWidth; j++) {
+            ctx.fillStyle = `rgb(${pixels.data[r]}, ${pixels.data[r+1]}, ${pixels.data[r+2]})`;
+            ctx.fillRect(i, j, 1, 1);
+            r+=4;
         }
-        // Create a buffer for the image
-        const image = canvas.toBuffer('image/png');
-        return image;
+    }
+    // Create a buffer for the image
+    const image = canvas.toBuffer('image/png');
+    return image;
 };
+
+// Copyright 2019 by András Péter
+// Edited by Alice Ma
+// Licensed under the GNU General Public License v3: http://www.gnu.org/licenses/gpl.html

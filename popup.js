@@ -1,4 +1,6 @@
+import {settings} from './inputParameters.js';
 document.getElementById('scrapeImagesBtn').addEventListener('click', function() {
+    console.log("settings: ",settings)
     if (this.id === "scrapeImagesBtn") {
         console.log("Scraping images");
         this.innerText = "Revert to Human";
