@@ -1,7 +1,3 @@
-// Copyright 2019 by András Péter
-// Edited by Alice Ma
-// Licensed under the GNU General Public License v3: http://www.gnu.org/licenses/gpl.html
-
 function imgprocess
 (
     pixels, //Image data from a canvas element's getImageData function
@@ -211,13 +207,16 @@ function imgprocess
     var r=0;
     for (var i=0; i<imgHeight; i++) {
         for (var j=0; j<imgWidth; j++) {
-            const pixel = pixelData[i * canvas.width + j];
-            ctx.fillStyle = `rgb(${pixel[r]}, ${pixel[r+1]}, ${pixel[r+2]})`;
+            ctx.fillStyle = `rgb(${pixels.data[r]}, ${pixels.data[r+1]}, ${pixels.data[r+2]})`;
             ctx.fillRect(i, j, 1, 1);
-            r+=4
+            r+=4;
         }
     }
     // Create a buffer for the image
     const image = canvas.toBuffer('image/png');
     return image;
 };
+
+// Copyright 2019 by András Péter
+// Edited by Alice Ma
+// Licensed under the GNU General Public License v3: http://www.gnu.org/licenses/gpl.html
