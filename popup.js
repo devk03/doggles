@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btn) {
       btn.addEventListener("click", function () {
         const currentSettings = getCurrentSettings();
-  
+        if (chrome.runtime.lastError) {
+            console.error(chrome.runtime.lastError.message);
+            return;
+        }
         if (this.id === "scrapeImagesBtn") {
           this.innerText = "Revert to Human";
           this.id = "revertToHumanBtn";

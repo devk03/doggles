@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("visualAcuityRange").value = window.settings.VisualAcuityValue;
         document.getElementById("acuityValue").textContent = window.settings.VisualAcuityValue;
     }
+
     // Deuteranopia Switch
     var deuteranopiaSwitch = document.getElementById("deuteranopia");
     deuteranopiaSwitch.addEventListener("change", function() {
@@ -52,4 +53,5 @@ function getCurrentSettings() {
         VisualAcuityValue: window.settings.VisualAcuityValue
     };
 }
+
 

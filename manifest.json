@@ -4,7 +4,8 @@
   "description": "See images through the eyes of animals",
   "manifest_version": 3,
   "author": "Team Doggles",
-  "permissions": ["activeTab", "scripting", "tabs"],
+  "permissions": ["tabs", "storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
