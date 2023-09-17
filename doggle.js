@@ -219,4 +219,8 @@ function imgprocess
 
 // Copyright 2019 by András Péter
 // Edited by Alice Ma
+// <<<<<<< integration
 // Licensed under the GNU General Public License v3: http://www.gnu.org/licenses/gpl.html
+// =======
+// Licensed under the GNU General Public License v3: http://www.gnu.org/licenses/gpl.html
+// >>>>>>> main
