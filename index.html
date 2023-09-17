@@ -1,61 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doggles</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            width: 250px;
-            color: #3e4a36;  /* forest green */
-            background: url('path_to_a_nature_image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        h2 {
-            font-size: 1.5em;
-            margin-top: 0;
-            color: #3e4a36;  /* forest green */
-            border-bottom: 1px solid #3e4a36;
-            padding-bottom: 5px;
-        }
-
-        p {
-            font-size: 1em;
-            margin-bottom: 15px;
-        }
-
-        button {
-            background-color: #a3b18a;  /* moss green */
-            color: #3e4a36;  /* forest green */
-            border: 1px solid #3e4a36;
-            padding: 10px 15px;
-            font-size: 1em;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #8f9f77;  /* a darker shade of moss green */
-        }
-
-        button:focus {
-            outline: none;
-        }
+      body {
+        font-family: "Arial", sans-serif;
+        width: 250px;
+        color: #3e4a36;
+        background: url("path_to_a_nature_image.jpg") no-repeat center center
+          fixed;
+        background-size: cover;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        font-size: 1.5em;
+        margin-top: 0;
+        color: #3e4a36;
+        border-bottom: 1px solid #3e4a36;
+        padding-bottom: 5px;
+      }
+      p,
+      button {
+        font-size: 1em;
+      }
+      p {
+        margin-bottom: 15px;
+      }
+      button {
+        background-color: #a3b18a;
+        color: #3e4a36;
+        border: 1px solid #3e4a36;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #8f9f77;
+      }
+      button:focus {
+        outline: none;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+      }
+      input:checked + .slider {
+        background-color: #a3b18a;
+      }
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+      .slider.round {
+        border-radius: 34px;
+      }
+      .slider.round:before {
+        border-radius: 50%;
+      }
     </style>
-</head>
-
-<body>
+  </head>
+  <body>
     <h2>Welcome to Doggles</h2>
     <p>Experience nature's wonders.</p>
+    <label for="deuteranopia">
+        Deuteranopia:
+        <div class="switch">
+          <input type="checkbox" id="deuteranopia" checked />
+          <span class="slider round"></span>
+        </div>
+      </label>
+      <br />
+      
+      <label for="brightnessDiscrimination">
+        Decreased brightness discrimination:
+        <div class="switch">
+          <input type="checkbox" id="brightnessDiscrimination" checked />
+          <span class="slider round"></span>
+        </div>
+      </label>
+      
+    <br />
+    <label for="visualAcuityRange">Reduce visual acuity by a factor of:</label>
+    <input
+      type="range"
+      id="visualAcuityRange"
+      min="1"
+      max="10"
+      step="1"
+      value="5"
+    />
+    <span id="acuityValue">0</span><br /><br />
     <button id="scrapeImagesBtn">Discover Images</button>
-    <script src="popup.js"></script>
+    <script type="module" src="inputParameters.js"></script>
+    <script type="module" src="popup.js"></script>
 </body>
-
 </html>
